@@ -166,10 +166,15 @@ public class VentanaProvinciaCrear extends javax.swing.JInternalFrame {
             data[1] = this.jTextField2.getText();
             data[2] = this.jTextField3.getText();
             data[3] = this.jTextField4.getText();
+            
+            try{
 
             this.provinciaControl.crear(data);
             this.ActualizarTabla();
             JOptionPane.showMessageDialog(rootPane, "La Carrera creada con exito");
+            } catch (Exception e1) {
+                JOptionPane.showMessageDialog(this, e1.getMessage(), "Error al crear", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

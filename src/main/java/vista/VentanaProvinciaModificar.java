@@ -182,10 +182,15 @@ public class VentanaProvinciaModificar extends javax.swing.JInternalFrame {
             data [2] = this.jTextField3.getText();
             data [3] = this.jTextField4.getText();
             data [4] = this.jTextField5.getText();
+            
+            try{
 
             this.provinciaControl.modificar(data);
             this.ActualizarTabla();
             JOptionPane.showMessageDialog(rootPane, "Provincia modificado con exito");
+            } catch (Exception e1) {
+            JOptionPane.showMessageDialog(this, e1.getMessage(), "Error en la Modificacion", JOptionPane.ERROR_MESSAGE);
+        }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

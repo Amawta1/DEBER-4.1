@@ -38,6 +38,8 @@ public class VentanaPaisModificar extends javax.swing.JInternalFrame {
             data[i][4] = this.paisControl.listar().get(i).getContinente();
             data[i][5] = this.paisControl.listar().get(i).getNombre();
             data[i][6] = Integer.toString(this.paisControl.listar().get(i).getCodigo());
+            
+            
 
         }
 
@@ -251,10 +253,15 @@ public class VentanaPaisModificar extends javax.swing.JInternalFrame {
             data [6] = this.jTextField7.getText();
             data [7] = this.jTextField8.getText();
             data [8] = this.jTextField9.getText();
+            
+            try{
 
             this.paisControl.modificar(data);
             this.ActualizarTabla();
             JOptionPane.showMessageDialog(rootPane, "Pais modificado con exito");
+            } catch (Exception e1) {
+            JOptionPane.showMessageDialog(this, e1.getMessage(), "Error en la Modificacion", JOptionPane.ERROR_MESSAGE);
+        }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

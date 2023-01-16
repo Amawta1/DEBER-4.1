@@ -132,8 +132,12 @@ public class VentanaProvinciaEliminar extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         if(JOptionPane.showConfirmDialog(this,"¿Está seguro de eliminar la Provincia?","Seleccione una opción...",JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE)==0){
             var data = this.jTextField1.getText();
+            try{
             this.provinciaControl.eliminar(data);
             this.ActualizarTabla();
+            }catch(Exception e1){
+            JOptionPane.showMessageDialog(this, e1.getMessage(), "Error en la Eliminacion", JOptionPane.ERROR_MESSAGE);
+        }
             JOptionPane.showMessageDialog(rootPane, "Provincia Eliminada con exito");
 
         }

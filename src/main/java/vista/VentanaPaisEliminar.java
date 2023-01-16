@@ -134,8 +134,12 @@ public class VentanaPaisEliminar extends javax.swing.JInternalFrame {
         if(JOptionPane.showConfirmDialog(this,"¿Está seguro de eliminar Pais?","Seleccione una opción...",JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE)==0){
             JOptionPane.showMessageDialog(jButton1, "Pais elimina con exito");
             var codigo = this.jTextField1.getText();
+            try{
             this.paisControl.eliminar(codigo);
             this.ActualizarTabla();
+            }catch(Exception e1){
+            JOptionPane.showMessageDialog(this, e1.getMessage(), "Error en la Eliminacion", JOptionPane.ERROR_MESSAGE);
+        }
 
         }
 

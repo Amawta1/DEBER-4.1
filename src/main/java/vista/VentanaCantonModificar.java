@@ -278,10 +278,15 @@ public class VentanaCantonModificar extends javax.swing.JInternalFrame {
             data[5] = this.jTextField6.getText();
             data[6] = this.jTextField7.getText();
             data[7] = this.jTextField8.getText();
+            
+            try{
 
             System.out.println(this.cantonControl.modificar(data));
             this.actualizarTabla();
             JOptionPane.showMessageDialog(rootPane, "Canton modificado con exito");
+            } catch (Exception e1) {
+            JOptionPane.showMessageDialog(this, e1.getMessage(), "Error en la Modificacion", JOptionPane.ERROR_MESSAGE);
+        }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

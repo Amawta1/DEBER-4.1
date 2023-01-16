@@ -24,6 +24,7 @@ public class CantonControl {
     }
 
     public String crear(String[] data) {
+        try{
         var retorno = "No se puede crear el Canton";
 
         var nombre = data[0];
@@ -53,9 +54,15 @@ public class CantonControl {
         }
 
         return retorno;
+        } catch (NumberFormatException e1) {
+            throw new RuntimeException("Error en los parametros");
+        } catch (RuntimeException e1) {
+            throw new RuntimeException("Nro lista existe");
+        }
     }
 
     public String modificar(String[] data) {
+        try{
         var retorno = "No se puede crear el Canton";
 
         var nombre = data[0];
@@ -86,12 +93,23 @@ public class CantonControl {
         }
         
         return retorno;
+        } catch (NumberFormatException e1) {
+            throw new RuntimeException("Error en los parametros");
+        } catch (RuntimeException e1) {
+            throw new RuntimeException("Nro lista existe");
+        }
     }
     
 
     public void eliminar(String codigos) {
+        try{
         var codigo = Integer.valueOf(codigos).intValue();
         this.cantonServiceImpl.eliminar(codigo);
+        } catch (NumberFormatException e1) {
+            throw new RuntimeException("Error en los parametros");
+        } catch (RuntimeException e1) {
+            throw new RuntimeException("Nro lista existe");
+        }
     }
 
     public List<Canton> listar() {

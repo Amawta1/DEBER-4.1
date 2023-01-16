@@ -144,8 +144,12 @@ public class VentanaCantonEliminar extends javax.swing.JInternalFrame {
         if (JOptionPane.showConfirmDialog(this, "¿Está seguro de eliminar Canton?", "Seleccione una opción...", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE) == 0) {
             JOptionPane.showMessageDialog(rootPane, "Canton Eliminado con exito");
             var codigo = this.jTextField1.getText();
+            try{
             this.cantonControl.eliminar(codigo);
             this.actualizarTabla();
+            }catch(Exception e1){
+            JOptionPane.showMessageDialog(this, e1.getMessage(), "Error en la Eliminacion", JOptionPane.ERROR_MESSAGE);
+        }
 
         }
     }//GEN-LAST:event_jButton1ActionPerformed

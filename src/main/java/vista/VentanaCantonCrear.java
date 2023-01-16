@@ -269,10 +269,15 @@ public class VentanaCantonCrear extends javax.swing.JInternalFrame {
             data[5] = this.jTextField6.getText();
             data[6] = this.jTextField7.getText();
             data[7] = this.jTextField8.getText();
+            
+            try {
 
             System.out.println(this.cantonControl.crear(data));
             this.actualizarTabla();
             JOptionPane.showMessageDialog(rootPane, "Canton creado con exito");
+            } catch (Exception e1) {
+                JOptionPane.showMessageDialog(this, e1.getMessage(), "Error al crear", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

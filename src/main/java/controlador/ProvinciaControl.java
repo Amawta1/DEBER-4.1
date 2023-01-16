@@ -19,6 +19,7 @@ public class ProvinciaControl {
     private PaisServiceImpl paisServiceImpl = new PaisServiceImpl();
 
     public String crear(String[] data) {
+        try{
         var retorno = "No se pudo crear la Provincia";
         
         var nombre = data[0];
@@ -32,9 +33,15 @@ public class ProvinciaControl {
         retorno = "Provincia creado exitosamente";
 
         return retorno;
+        } catch (NumberFormatException e1) {
+            throw new RuntimeException("Error en los parametros");
+        } catch (RuntimeException e1) {
+            throw new RuntimeException("Nro lista existe");
+        }
     }
 
     public String modificar(String[] data) {
+        try{
         var retorno = "No se pudo crear la Provincia";
         
         var nombre = data[0];
@@ -49,11 +56,22 @@ public class ProvinciaControl {
         retorno = "Provincia modificado exitosamente";
 
         return retorno;
+        } catch (NumberFormatException e1) {
+            throw new RuntimeException("Error en los parametros");
+        } catch (RuntimeException e1) {
+            throw new RuntimeException("Nro lista existe");
+        }
     }
 
     public void eliminar(String codigos) {
+        try{
         var codigo = Integer.valueOf(codigos).intValue();
         this.provinciaServiceImpl.eliminar(codigo);
+        } catch (NumberFormatException e1) {
+            throw new RuntimeException("Error en los parametros");
+        } catch (RuntimeException e1) {
+            throw new RuntimeException("Nro lista existe");
+        }
     }
 
     public List<Provincia> listar() {

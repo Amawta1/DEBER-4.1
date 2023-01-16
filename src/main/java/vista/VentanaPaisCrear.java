@@ -255,11 +255,16 @@ public class VentanaPaisCrear extends javax.swing.JInternalFrame {
             data [6] = this.jTextField7.getText();
             data [7] = this.jTextField8.getText();
             data [8] = this.jTextField9.getText();
+            
+            try {
 
             this.paisControl.crear(data);
             this.ActualizarTabla();
 
             JOptionPane.showMessageDialog(rootPane, "El Pais se creo con exito");
+            } catch (Exception e1) {
+                JOptionPane.showMessageDialog(this, e1.getMessage(), "Error al crear", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
