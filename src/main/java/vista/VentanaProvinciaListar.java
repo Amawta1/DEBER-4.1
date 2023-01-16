@@ -32,10 +32,10 @@ public class VentanaProvinciaListar extends javax.swing.JInternalFrame {
         for (var i = 0; i < this.provinciaControl.listar().size(); i++) {
             
             data[i][0] = this.provinciaControl.listar().get(i).getNombre();
-            data[i][2] = this.provinciaControl.listar().get(i).getExpancionTerritorial();
-            data[i][3] = this.provinciaControl.listar().get(i).getPais();
-            data[i][4] = this.provinciaControl.listar().get(i).getNroHabitantes();
-            data[i][5] = this.provinciaControl.listar().get(i).getCodigo();
+            data[i][2] = Integer.toString(this.provinciaControl.listar().get(i).getExpancionTerritorial());
+            data[i][3] = this.provinciaControl.listar().get(i).getPais().getNombre();
+            data[i][4] = Integer.toString(this.provinciaControl.listar().get(i).getNroHabitantes());
+            data[i][5] = Integer.toString(this.provinciaControl.listar().get(i).getCodigo());
 
         }
 

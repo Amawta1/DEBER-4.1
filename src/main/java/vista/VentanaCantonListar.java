@@ -41,12 +41,12 @@ public class VentanaCantonListar extends javax.swing.JInternalFrame {
         var data = new Object[this.cantonControl.listar().size()][6];
         for (var i = 0; i < this.cantonControl.listar().size(); i++) {
             
-           data[i][0] = this.cantonControl.listar().get(i).getNombre();
+          data[i][0] = this.cantonControl.listar().get(i).getNombre();
             data[i][1] = this.cantonControl.listar().get(i).getExpancionTerritorial();
-            data[i][2] = this.cantonControl.listar().get(i).getFundacion().getYear();
-            data[i][3] = this.cantonControl.listar().get(i).getNroHabitantes();
-            data[i][4] = this.cantonControl.listar().get(i).getProvincia();
-            data[i][5] = this.cantonControl.listar().get(i).getCodigo();
+            data[i][2] = Integer.toString(this.cantonControl.listar().get(i).getFundacion().getYear()) + "-" + Integer.toString(this.cantonControl.listar().get(i).getFundacion().getMonthValue()) + "-" + Integer.toString(this.cantonControl.listar().get(i).getFundacion().getDayOfMonth());
+            data[i][3] = Integer.toString(this.cantonControl.listar().get(i).getNroHabitantes());
+            data[i][4] = this.cantonControl.listar().get(i).getProvincia().getNombre();
+            data[i][5] = Integer.toString(this.cantonControl.listar().get(i).getCodigo());
 
         }
         this.tableModel = new DefaultTableModel(data, header);

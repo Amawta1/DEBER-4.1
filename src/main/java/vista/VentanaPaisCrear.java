@@ -31,13 +31,13 @@ public class VentanaPaisCrear extends javax.swing.JInternalFrame {
         var data = new Object[this.paisControl.listar().size()][7];
         for (var i = 0; i < this.paisControl.listar().size(); i++) {
             
-            data[i][0] = this.paisControl.listar().get(i).getNroProvincias();
+            data[i][0] = Integer.toString(this.paisControl.listar().get(i).getNroProvincias());
             data[i][1] = this.paisControl.listar().get(i).getCapital();
-            data[i][2] = this.paisControl.listar().get(i).getDescubrimiento().getYear();
+            data[i][2] = Integer.toString(this.paisControl.listar().get(i).getDescubrimiento().getYear()) + "-" + Integer.toString(this.paisControl.listar().get(i).getDescubrimiento().getMonthValue()) + "-" + Integer.toString(this.paisControl.listar().get(i).getDescubrimiento().getDayOfMonth());
             data[i][3] = this.paisControl.listar().get(i).getPresidente();
             data[i][4] = this.paisControl.listar().get(i).getContinente();
             data[i][5] = this.paisControl.listar().get(i).getNombre();
-            data[i][6] = this.paisControl.listar().get(i).getCodigo();
+            data[i][6] = Integer.toString(this.paisControl.listar().get(i).getCodigo());
 
         }
 
