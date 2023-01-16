@@ -36,7 +36,7 @@ public class ProvinciaControl {
         } catch (NumberFormatException e1) {
             throw new RuntimeException("Error en los parametros");
         } catch (RuntimeException e1) {
-            throw new RuntimeException("Nro lista existe");
+            throw new RuntimeException("Codigo existe");
         }
     }
 
@@ -59,7 +59,7 @@ public class ProvinciaControl {
         } catch (NumberFormatException e1) {
             throw new RuntimeException("Error en los parametros");
         } catch (RuntimeException e1) {
-            throw new RuntimeException("Nro lista existe");
+            throw new RuntimeException("Codigo existe");
         }
     }
 
@@ -70,7 +70,7 @@ public class ProvinciaControl {
         } catch (NumberFormatException e1) {
             throw new RuntimeException("Error en los parametros");
         } catch (RuntimeException e1) {
-            throw new RuntimeException("Nro lista existe");
+            throw new RuntimeException("Codigo existe");
         }
     }
 

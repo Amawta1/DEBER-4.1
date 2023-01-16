@@ -26,7 +26,7 @@ public class VentanaPaisCrear extends javax.swing.JInternalFrame {
         
     }
 
-    public void ActualizarTabla() {
+    /*public void ActualizarTabla() {
         var header = new String[]{"Nombre del Continente", "Nombre del Pais", "Nombre del Presidente", "Nombre de la Capital","año","mes","dia", "Nro.Provincia", "Codigo"};
         var data = new Object[this.paisControl.listar().size()][7];
         for (var i = 0; i < this.paisControl.listar().size(); i++) {
@@ -44,7 +44,7 @@ public class VentanaPaisCrear extends javax.swing.JInternalFrame {
         this.tableModel = new DefaultTableModel(data, header);
         this.jTable1.setModel(this.tableModel);
 
-    }
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -266,6 +266,25 @@ public class VentanaPaisCrear extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(this, e1.getMessage(), "Error al crear", JOptionPane.ERROR_MESSAGE);
             }
         }
+    }
+        
+    public void ActualizarTabla() {
+        var header = new String[]{"Nombre del Continente", "Nombre del Pais", "Nombre del Presidente", "Nombre de la Capital","año","mes","dia", "Nro.Provincia", "Codigo"};
+        var data = new Object[this.paisControl.listar().size()][7];
+        for (var i = 0; i < this.paisControl.listar().size(); i++) {
+            
+            data[i][0] = Integer.toString(this.paisControl.listar().get(i).getNroProvincias());
+            data[i][1] = this.paisControl.listar().get(i).getCapital();
+            data[i][2] = Integer.toString(this.paisControl.listar().get(i).getDescubrimiento().getYear()) + "-" + Integer.toString(this.paisControl.listar().get(i).getDescubrimiento().getMonthValue()) + "-" + Integer.toString(this.paisControl.listar().get(i).getDescubrimiento().getDayOfMonth());
+            data[i][3] = this.paisControl.listar().get(i).getPresidente();
+            data[i][4] = this.paisControl.listar().get(i).getContinente();
+            data[i][5] = this.paisControl.listar().get(i).getNombre();
+            data[i][6] = Integer.toString(this.paisControl.listar().get(i).getCodigo());
+
+        }
+
+        this.tableModel = new DefaultTableModel(data, header);
+        this.jTable1.setModel(this.tableModel);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
